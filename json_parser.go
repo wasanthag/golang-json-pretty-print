@@ -103,17 +103,17 @@ func main() {
 	if err2 != nil {
 		fmt.Println("Unpacking json to slice error:", err2)
 	}
-
+	//https://golang.org/pkg/encoding/json/#example_Indent
 	for l := range commits {
 		fmt.Println("-------- Commit details in json --------")
 		fmt.Printf("%+v\n", commits[l])
 		fmt.Println()
 		fmt.Println("-------- Commit details in human readable format --------")
-		b, err3 := json.MarshalIndent(commits[l], "", "  ")
+		hr_fmt, err3 := json.MarshalIndent(commits[l], "", "\t")
 		if err3 != nil {
         		fmt.Println("json Indenting error",err3)
     		}
-                println(string(b))
+                println(string(hr_fmt))
 
 	}
 
