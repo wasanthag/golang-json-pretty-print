@@ -8,7 +8,7 @@ node("slave1") {
         println commit_id
     
         stage "build"
-        def app = docker.build "jenkins-docker"
+        def app = docker.build "jenkins-test"
     
         stage "publish"
         app.push 'master'
