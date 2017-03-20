@@ -1,5 +1,5 @@
 node("slave1") {
-    docker.withRegistry('https://hub.docker.com/wasanthag/jenkins-test/', 'fa66db69-6a9d-4813-9903-22f36929608c') {
+    docker.withRegistry('wasanthag/jenkins-test', 'fa66db69-6a9d-4813-9903-22f36929608c') {
     
         git url: "https://github.com/wasanthag/golang-json-pretty-print.git", credentialsId: 'b71cbc52-dcc5-46a0-8bde-7a825ef3fa5b'
     
